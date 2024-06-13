@@ -1,0 +1,32 @@
+{% extends 'fbase.html' %}
+{% block title %} Search {% endblock %}
+
+{% block content%}
+    <h1>Search</h1>
+
+    <h2>Search results for "{{ query }}":</h2>
+        {% if products %}
+            <div class="row">
+                {% for product in products %}
+                <div class="col-md-4">
+                    <a href="{% url 'product_detail' product.category.slug product.slug %}" style="text-decoration: none;">
+                <div class="card">
+                    <img src="{{ product.image.url }}" alt="{{ product.title }} width="250" height="300"" class="card-img-top">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <span class="card-text" style="color:grey; font-size:small;">{{ product.owner }}</span><br>
+                    <span class="card-text" style="color:orange;"><b>{{ product.rating }} &#9733;</b></span><br>
+                    <p class="card-text"><strong>£{{ product.price }}</strong></p>
+                    
+                    </div>
+                </div>
+                </a>
+                </div>
+            
+
+    {% endfor %}
+</div>
+{% else %}
+            <p>There are no product matching this query!</p>
+            {% endif %}
+{% endblock %}

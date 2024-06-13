@@ -1,0 +1,42 @@
+{% extends "fbase.html" %}
+
+{% block title %} Homepage {% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+  <h5>Welcome to ORA Store, {% if user.is_authenticated %} {{ user.username }} {% else %} visitor! {% endif %}</h5>
+  <p><strong>Total users registered: </strong> {{ count }}</p>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h1>Shopping made easy</h1>
+    <p>Shop at your own leisure time and we will take care of the delivery.</p>
+    {% if not user.is_authenticated %}
+      <a href="{% url 'signup' %}" class="btn btn-primary">Register with Us</a>
+    {% endif %}
+  </div>
+  <div class="col-md-6">
+    <img src="https://via.placeholder.com/500x300" alt="Hero Image" class="img-fluid rounded">
+  </div>
+</div>
+
+<h1 class="mt-5">New Products</h1>
+<div class="row">
+  {% for product in products %}
+    <div class="col-md-4 mb-4">
+      <a href="{% url 'product_detail' product.category.slug product.slug %}" class="text-decoration-none">
+        <div class="card h-100">
+          <img src="{{ product.image.url }}" alt="{{ product.title }}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <span class="card-text text-muted small">{{ product.owner }}</span><br>
+            <span class="card-text text-warning"><b>{{ product.rating }} &#9733;</b></span><br>
+            <p class="card-text"><strong>£{{ product.price }}</strong></p>
+          </div>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

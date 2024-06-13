@@ -1,0 +1,90 @@
+{% extends 'fbase.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% block title %}Checkout{% endblock %}
+{% block style %}
+    <!-- Add your CSS styles here -->
+{% endblock %}
+{% block content %}
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <p>Please fill in your details below to complete your order.</p>
+        </div>
+        <form class="checkout-form" method="post" action=".">
+            {% csrf_token %}
+            <div class="form-row">
+                {{ form.as_p }}
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="termsAndConditions" required>
+                    <label class="form-check-label" for="termsAndConditions">I agree to the <a href="#">terms and conditions</a>.</label>
+                </div>
+            </div>
+            <div class="checkout-total">
+                <h4>Total:</h4>
+                <h3>£{{ cart.get_total_cost }}</h3>
+            </div>
+            <div class="checkout-submit">
+                <button type="submit" class="btn btn-primary" onclick="buy(event)">Submit Order</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    function buy(event) {
+        event.preventDefault();
+        let data = {
+            'first_name': document.getElementById('id_first_name').value,
+            'last_name': document.getElementById('id_last_name').value,
+            'address': document.getElementById('id_address').value,
+            'zipcode': document.getElementById('id_zipcode').value,
+            'city': document.getElementById('id_city').value,
+            'state': document.getElementById('id_state').value,
+            'country': document.getElementById('id_country').value
+        };
+
+        // let stripe = Stripe('{{ pub_key }}');
+        let stripe = Stripe('pk_test_51KwDnFCmR9QSmpcbfP3vkbV6Taep2x8ngwzpE53LktYt20rWs44cKG2ti2FEft3moQHBAg5S7980k97isgLuW40A008x1116yl');
+
+        fetch('/cart/checkout/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            credentials: 'same-origin',
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(session => {
+            return stripe.redirectToCheckout({ sessionId: session.sessionId });
+        })
+        .then(result => {
+            if (result.error) {
+                alert(result.error.message);
+            }
+        })
+        .catch(error => {
+            console.error('There was an error:', error);
+            alert('An error occurred. Please try again.');
+        });
+
+        return false;
+    }
+</script>
+{% endblock %}
+
+</html>
+

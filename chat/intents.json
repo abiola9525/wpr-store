@@ -1,0 +1,224 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hey",
+                "How are you",
+                "Is anyone there?",
+                "Hello",
+                "Good day"
+            ],
+            "responses": [
+                "Hey there!",
+                "Hello, thanks for visiting WPR Store",
+                "Hi there, what can I do for you?",
+                "Hi there, how can I help?"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["Bye", "See you later", "Goodbye"],
+            "responses": [
+                "See you later, thanks for visiting WPR Store",
+                "Have a nice day",
+                "Bye! Come back again soon."
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!"],
+            "responses": ["Happy to help!", "Any time!", "My pleasure"]
+        },
+        {
+            "tag": "store_hours",
+            "patterns": [
+                "What are your store hours?",
+                "When are you open?",
+                "Store hours?",
+                "What time do you close?"
+            ],
+            "responses": [
+                "We are open from 9 AM to 9 PM every day."
+            ]
+        },
+        {
+            "tag": "return_policy",
+            "patterns": [
+                "What is your return policy?",
+                "Can I return an item?",
+                "How do returns work?"
+            ],
+            "responses": [
+                "You can return any item within 30 days of purchase. Please ensure the item is in its original condition."
+            ]
+        },
+        {
+            "tag": "shipping_info",
+            "patterns": [
+                "Do you offer free shipping?",
+                "How much does shipping cost?",
+                "What are your shipping options?"
+            ],
+            "responses": [
+                "We offer free shipping on orders over $50. Standard shipping is $5, and express shipping is $15."
+            ]
+        },
+        {
+            "tag": "order_status",
+            "patterns": [
+                "Where is my order?",
+                "What is the status of my order?",
+                "Can I track my order?"
+            ],
+            "responses": [
+                "You can track your order using the tracking number sent to your email. If you need further assistance, please provide your order number."
+            ]
+        },
+        {
+            "tag": "payment_methods",
+            "patterns": [
+                "What payment methods do you accept?",
+                "Can I pay with PayPal?",
+                "Do you accept credit cards?"
+            ],
+            "responses": [
+                "We accept Visa, MasterCard, American Express, and PayPal."
+            ]
+        },
+        {
+            "tag": "product_availability",
+            "patterns": [
+                "Is this product in stock?",
+                "Do you have this item available?",
+                "Can I get this product?"
+            ],
+            "responses": [
+                "Please provide the product name or SKU, and I will check the availability for you."
+            ]
+        },
+        {
+            "tag": "contact_support",
+            "patterns": [
+                "How can I contact support?",
+                "I need help with my order",
+                "Can I speak to a representative?"
+            ],
+            "responses": [
+                "You can contact our support team at support@wprstore.com or call us at 1-800-123-4567."
+            ]
+        },
+        {
+            "tag": "product_recommendation",
+            "patterns": [
+                "Can you recommend a product?",
+                "What is the best product for me?",
+                "I'm looking for a good product."
+            ],
+            "responses": [
+                "Sure, please provide some details on what you're looking for, and I'll recommend the best products for you."
+            ]
+        },
+        {
+            "tag": "discounts_offers",
+            "patterns": [
+                "Are there any discounts?",
+                "Do you have any offers?",
+                "Current promotions?",
+                "Any deals available?"
+            ],
+            "responses": [
+                "We have a 20% discount on all electronics. Check our 'Deals' section for more offers."
+            ]
+        },
+        {
+            "tag": "loyalty_program",
+            "patterns": [
+                "Do you have a loyalty program?",
+                "How does your loyalty program work?",
+                "Loyalty program benefits?"
+            ],
+            "responses": [
+                "Yes, we have a loyalty program. You earn points with every purchase that can be redeemed for discounts on future orders."
+            ]
+        },
+        {
+            "tag": "refund_policy",
+            "patterns": [
+                "What is your refund policy?",
+                "How do I get a refund?",
+                "Can I get my money back?"
+            ],
+            "responses": [
+                "Refunds are processed within 5-7 business days after we receive the returned item. You will be notified via email once the refund is processed."
+            ]
+        },
+        {
+            "tag": "track_order",
+            "patterns": [
+                "How do I track my order?",
+                "Can I see where my order is?",
+                "Track order status"
+            ],
+            "responses": [
+                "You can track your order by logging into your account and going to 'My Orders'."
+            ]
+        },
+        {
+            "tag": "cancel_order",
+            "patterns": [
+                "How do I cancel my order?",
+                "Can I cancel my order?",
+                "Cancel order process"
+            ],
+            "responses": [
+                "To cancel your order, please contact our support team as soon as possible. If the order hasn't been shipped, we can process the cancellation."
+            ]
+        },
+        {
+            "tag": "exchange_policy",
+            "patterns": [
+                "Can I exchange an item?",
+                "How do exchanges work?",
+                "Exchange policy?"
+            ],
+            "responses": [
+                "Yes, you can exchange items within 30 days of purchase. Please contact our support team to initiate the exchange."
+            ]
+        },
+        {
+            "tag": "order_delay",
+            "patterns": [
+                "Why is my order delayed?",
+                "Order delivery taking too long",
+                "Delay in order"
+            ],
+            "responses": [
+                "We apologize for the delay. Sometimes, due to high demand or logistical issues, orders might take longer to deliver. Please check your email for any updates or contact our support team for more information."
+            ]
+        },
+        {
+            "tag": "account_creation",
+            "patterns": [
+                "How do I create an account?",
+                "Sign up process?",
+                "Create a new account"
+            ],
+            "responses": [
+                "To create an account, click on the 'Sign Up' button at the top right corner of the homepage and fill in your details."
+            ]
+        },
+        {
+            "tag": "reset_password",
+            "patterns": [
+                "How do I reset my password?",
+                "Forgot password?",
+                "Password reset process"
+            ],
+            "responses": [
+                "To reset your password, click on the 'Forgot Password' link on the login page and follow the instructions."
+            ]
+        }
+    ]
+}

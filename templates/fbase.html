@@ -1,0 +1,175 @@
+{% load static %}
+{% load menu %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'chat/style.css' %}">
+  <title>{% block title %}{% endblock %} | WPR Store</title>
+  <style type="text/css">
+    .asteriskField {
+      display: none;
+    }
+    form .alert ul li {
+      list-style: none;
+    }
+    form .alert ul {
+      padding: 0;
+      margin: 0;
+    }
+    .footer-margin {
+      margin-top: 5rem;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .search input[type="search"] {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .search .fa-search {
+      margin-left: -15px;
+      cursor: pointer;
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .footer p, .footer a {
+      margin: 0;
+      color: #bbb;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    {% block style %} {% endblock %}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">WPR Store</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About Us</a>
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="#">Secret Page</a>
+            </li>
+          {% endif %}
+        </ul>
+        <div class="search">
+          <form method="get" action="/search/" class="form-inline my-2 my-lg-0">
+            <input type="search" name="query" placeholder="Search..." class="form-control mr-sm-2">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              {% menu %}
+            </div>
+          </li>
+        </ul>
+        {% if user.is_authenticated %}
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ user.username }}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+              </div>
+            </li>
+          </ul>
+        {% else %}
+          <form class="form-inline my-2 my-lg-0">
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary my-2 my-sm-0">Log in</a>
+            <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+          </form>
+        {% endif %}
+        <a href="{% url 'cart_view' %}" class="btn btn-outline-primary ml-2">
+          <i class="fa fa-shopping-cart"></i>({{ cart|length }})
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  <footer class="bg-dark text-white footer-margin py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mt-3">
+          <h4>About Us</h4>
+          <p>We specialize in selling high-quality products at affordable prices. Our mission is to provide the best customer service and ensure customer satisfaction.</p>
+        </div>
+        <div class="col-md-6 mt-3">
+          <h4>Contact Us</h4>
+          <p>123 Main Street<br> London, United Kingdok<br> Phone: +44 012 345 6789<br> Email: example@gmail.com</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <p>&copy; 2024 WPR Store. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="/admin/">Admin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="chatbox">
+            <div class="chatbox__support">
+                <div class="chatbox__header">
+                    <div class="chatbox__image--header">
+                        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                    </div>
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">Chat support</h4>
+                        <p class="chatbox__description--header">Hi. My name is ORA. How can I help you?</p>
+                    </div>
+                </div>
+                <div class="chatbox__messages">
+                    <div></div>
+                </div>
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbox__send--footer send__button">Send</button>
+                    <button id="start-record-btn" class="chatbox__send--footer">🎤 Start</button>
+                    <button id="stop-record-btn" class="chatbox__send--footer">🛑 Stop</button>
+                </div>
+            </div>
+            <div class="chatbox__button">
+                <button><img src="{% static 'chat/images/chatbox-icon.svg' %}" /></button>
+            </div>
+        </div>
+  <script>
+        const SCRIPT_ROOT = "{{ request.scheme }}://{{ request.get_host }}";
+    </script>
+    <script type="text/javascript" src="{% static 'chat/app.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  {% block scripts %} {% endblock %}
+</body>
+</html>

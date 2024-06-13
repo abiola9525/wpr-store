@@ -1,0 +1,10 @@
+{% extends "fbase.html" %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+    <h1> My Account</h1>
+
+    <h5>{{user.username}}</h5>
+    <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger">Logout</button></a>
+{% endblock %}

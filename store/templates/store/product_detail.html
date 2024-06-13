@@ -1,0 +1,54 @@
+{% extends 'fbase.html' %}
+
+{% block title %} {{ product.title }} | ORA Store {% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-5">
+      <!-- Product image -->
+      <img src="{{ product.image.url }}" width="350" height="400" id="productImage" class="img-fluid" data-toggle="modal" data-target="#productImageModal" alt="{{ product.title }}">
+    </div>
+    <div class="col-md-7">
+      <!-- Product title -->
+      <h1 class="text-uppercase mb-3">{{ product.title }}</h1>
+      <!-- Product rating -->
+      <div class="d-flex mb-3">
+        <div style="color:orange;">{{ product.rating }} &#9733;</div>
+      </div>
+      <!-- Product price -->
+      <h2 class="text-danger mb-3">£{{ product.price }}</h2>
+      <!-- Product description -->
+      <p class="mb-3">{{ product.description|safe }}</p>
+      <!-- Add to cart button -->
+      <a href="{% url 'add_to_cart' product.id %}">
+        <button class="btn btn-lg btn-danger mb-3">Add to Cart</button>
+      </a>
+      <!-- Product image popup modal -->
+      <div class="modal fade" id="productImageModal" tabindex="-1" role="dialog" aria-labelledby="productImageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="productImageModalLabel">Product Image</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.title }}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  $('#productImage').click(function() {
+    $('#productImageModal').modal('show');
+  });
+</script>
+{% endblock %}
