@@ -3,6 +3,24 @@
 import nltk
 import numpy as np
 from nltk.stem.porter import PorterStemmer
+import os
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+# Set NLTK data path
+nltk_data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../nltk_data')
+nltk.data.path.append(nltk_data_path)
+
+# Ensure 'punkt' is downloaded
+try:
+    nltk.data.find('tokenizers/punkt')
+    logger.info("Punkt tokenizer data is available.")
+except LookupError:
+    logger.error("Punkt tokenizer data is not found. Downloading...")
+    nltk.download('punkt', download_dir=nltk_data_path)
 
 stemmer = PorterStemmer()
 
@@ -32,3 +50,4 @@ def bag_of_words(tokenized_sentence, all_words):
             bag[idx] = 1.0
 
     return bag
+
