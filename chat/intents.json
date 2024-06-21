@@ -210,6 +210,175 @@
             ]
         },
         {
+	      "tag": "product_price_asus",
+	      "patterns": [
+		"What's the price of ASUS ROG STRIX SCAR 16?",
+		"How much does the ROG Strix SCAR 16 cost?",
+		"Price of G634JZ-N4034W?"
+	      ],
+	      "responses": [
+		"The price of the ASUS ROG STRIX SCAR 16 is £3100."
+	      ]
+	    },
+	    {
+	      "tag": "product_description_asus",
+	      "patterns": [
+		"Tell me about ASUS ROG STRIX SCAR 16",
+		"What are the features of G634JZ-N4034W?",
+		"Describe the ROG Strix SCAR 16."
+	      ],
+	      "responses": [
+		"The ASUS ROG STRIX SCAR 16 is a powerful gaming laptop designed for gamers and game developers.",
+		"It features up to an Intel® Core™ i9 processor and NVIDIA® GeForce RTX™ 4080 Laptop GPU, along with a 16-inch QHD+ display.",
+		"With support for up to 64GB of DDR5 RAM and 4TB of PCIe Gen4x4 storage, it's ideal for gaming, streaming, and content creation."
+	      ]
+	    },
+	    {
+	      "tag": "product_specs_asus",
+	      "patterns": [
+		"What are the specifications of ASUS ROG STRIX SCAR 16?",
+		"List the specs of G634JZ-N4034W",
+		"Specs of the ROG Strix SCAR 16"
+	      ],
+	      "responses": [
+		"Processor: 13th Gen Intel® Core™ i9-13980HX Processor",
+		"Memory: 32GB DDR5 4800Mhz",
+		"Storage: 1TB M.2 NVMe™ PCIe® 4.0 SSD (supports up to 4TB)",
+		"Graphics: NVIDIA® GeForce RTX™ 4080 Laptop GPU, 12GB GDDR6",
+		"Display: 16-inch QHD+ 16:10 (2560 x 1600, WQXGA), 240Hz refresh rate, G-Sync",
+		"Operating System: Windows 11 Home",
+		"Battery: 90WHrs, 4-cell Li-ion"
+	      ]
+	    },
+	    {
+	      "tag": "product_price_hp",
+	      "patterns": [
+		"What's the price of HP EliteBook 840 G5?",
+		"How much does the EliteBook 840 G5 cost?",
+		"Price of EliteBook 840 G5?"
+	      ],
+	      "responses": [
+		"The price of the HP EliteBook 840 G5 is £310."
+	      ]
+	    },
+	    {
+	      "tag": "product_description_hp",
+	      "patterns": [
+		"Tell me about HP EliteBook 840 G5",
+		"What are the features of EliteBook 840 G5?",
+		"Describe the EliteBook 840 G5."
+	      ],
+	      "responses": [
+		"The HP EliteBook 840 G5 is a professional laptop featuring an Intel Core i5 processor and Intel Iris Xe Graphics.",
+		"It comes with a 14-inch Full HD display, Windows 11 Pro, and offers up to 16GB of DDR4 RAM and a 1TB SSD for fast performance.",
+		"With features like a backlit keyboard, fingerprint reader, and extensive security options, it's designed for business and productivity."
+	      ]
+	    },
+	    {
+	      "tag": "product_specs_hp",
+	      "patterns": [
+		"What are the specifications of HP EliteBook 840 G5?",
+		"List the specs of EliteBook 840 G5",
+		"Specs of the EliteBook 840 G5"
+	      ],
+	      "responses": [
+		"Processor: Intel Core i5-8350U G5, up to 4.2 GHz with Intel Turbo Boost",
+		"Memory: 16GB DDR4 RAM",
+		"Storage: 1TB SSD PCIe 3.0 x4 NVMe",
+		"Graphics: Intel Iris Xe Graphics",
+		"Display: 14-inch Full HD (1920 x 1080), anti-glare, 250 nits",
+		"Operating System: Windows 11 Pro",
+		"Battery: 53 Wh, up to 14.5 hours of battery life"
+	      ]
+	    },
+	    {
+	      "tag": "product_price_macbook_pro",
+	      "patterns": [
+		"What's the price of Apple MacBook Pro 16.2\"?",
+		"How much does the MacBook Pro 16.2\" cost?",
+		"Price of Apple MacBook Pro 16.2\"?"
+	      ],
+	      "responses": [
+		"The price of the Apple MacBook Pro 16.2\" is £3000."
+	      ]
+	    },
+	    {
+	      "tag": "product_description_macbook_pro",
+	      "patterns": [
+		"Tell me about Apple MacBook Pro 16.2\"",
+		"What are the features of MacBook Pro 16.2\"?",
+		"Describe the MacBook Pro 16.2\"."
+	      ],
+	      "responses": [
+		"The new MacBook Pro delivers game-changing performance for pro users. Choose the powerful M1 Max to supercharge pro-level workflows while getting amazing battery life.",
+		"It features a 16-inch Liquid Retina XDR display with ProMotion technology, a powerful Apple M1 Max chip, and up to 64GB of unified memory.",
+		"With up to 21 hours of battery life, a 1080p FaceTime HD camera, six-speaker sound system, and an array of ports, it's ideal for creative professionals."
+	      ]
+	    },
+	    {
+	      "tag": "product_specs_macbook_pro",
+	      "patterns": [
+		"What are the specifications of Apple MacBook Pro 16.2\"?",
+		"List the specs of MacBook Pro 16.2\"",
+		"Specs of the MacBook Pro 16.2\""
+	      ],
+	      "responses": [
+		"Processor: Apple M1 Max chip",
+		"Memory: Up to 64GB of unified memory",
+		"Storage: Up to 8TB SSD",
+		"Graphics: Up to 32-core GPU",
+		"Display: 16.2-inch Liquid Retina XDR display, 3456 x 2234 resolution, ProMotion technology",
+		"Operating System: macOS Monterey",
+		"Battery: Up to 21 hours",
+		"Ports: Three Thunderbolt 4 ports, HDMI port, SDXC card slot, MagSafe 3 port, headphone jack"
+	      ]
+	    },
+	    {
+	      "tag": "product_price_macbook_air",
+	      "patterns": [
+		"What's the price of Apple 13.6\" MacBook Air (M2, Midnight)?",
+		"How much does the MacBook Air M2 cost?",
+		"Price of Apple 13.6\" MacBook Air M2?"
+	      ],
+	      "responses": [
+		"The price of the Apple 13.6\" MacBook Air (M2, Midnight) is £1500."
+	      ]
+	    },
+	    {
+	      "tag": "product_description_macbook_air",
+	      "patterns": [
+		"Tell me about Apple 13.6\" MacBook Air (M2, Midnight)",
+		"What are the features of MacBook Air M2?",
+		"Describe the MacBook Air M2."
+	      ],
+	      "responses": [
+		"The Apple 13.6\" MacBook Air now features the Apple M2 chip, offering significant performance improvements over its predecessor.",
+		"It comes with an 8-core CPU, 10-core GPU, 16-core Neural Engine, 8GB of unified RAM, and a 512GB SSD.",
+		"With a 13.6\" Liquid Retina Display, 1080p FaceTime HD camera, and up to 18 hours of battery life, it's powerful yet portable."
+	      ]
+	    },
+	    {
+	      "tag": "product_specs_macbook_air",
+	      "patterns": [
+		"What are the specifications of Apple 13.6\" MacBook Air (M2, Midnight)?",
+		"List the specs of MacBook Air M2",
+		"Specs of the MacBook Air M2"
+	      ],
+	      "responses": [
+		"Processor: Apple M2 8-Core Chip",
+		"Memory: 8GB Unified RAM",
+		"Storage: 512GB SSD",
+		"Graphics: 10-Core GPU",
+		"Display: 13.6-inch 2560 x 1664 Liquid Retina Display",
+		"Operating System: macOS",
+		"Battery: Up to 18 hours",
+		"Ports: Two Thunderbolt 3 ports, MagSafe 3 port",
+		"Camera: 1080p FaceTime HD camera",
+		"Other Features: Backlit Magic Keyboard, Touch ID, Wi-Fi 6 (802.11ax), Bluetooth 5.0, three-mic array"
+	      ]
+	    },
+        
+        {
             "tag": "reset_password",
             "patterns": [
                 "How do I reset my password?",
